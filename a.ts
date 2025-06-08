@@ -1,1 +1,2 @@
-export const a = 1;
+export let a = 1;
+a = a + 1;
