@@ -1,0 +1,35 @@
+name: Marketplace Build
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_sha:
+        description: "Commit SHA to build"
+        required: true
+      image_tag:
+        description: "Docker image tag"
+        required: true
+      app_name:
+        description: "App name"
+        required: true
+      enable_sdr:
+        description: "Enable SDR"
+        required: false
+        default: "false"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print inputs
+        run: |
+          echo "commit_sha=${{ inputs.commit_sha }}"
+          echo "image_tag=${{ inputs.image_tag }}"
+          echo "app_name=${{ inputs.app_name }}"
+          echo "enable_sdr=${{ inputs.enable_sdr }}"
+
+      - name: Simulate build
+        run: |
+          echo "Building ${{ inputs.app_name }}..."
+          sleep 5
+          echo "Build complete!"
