@@ -14,3 +14,4 @@ export function g(a: number) {
 export function h(a: number) {
   return a + 1;
 }
+export const a = 1000000;
