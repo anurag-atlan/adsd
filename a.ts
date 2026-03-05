@@ -1,1 +1,1 @@
-export const a = 1000000;
+export const a = 1;
