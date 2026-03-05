@@ -28,10 +28,6 @@ jobs:
       - name: Minimum run time
         run: sleep 60
 
-      - name: Intentional failure for error log testing
-        run: |
-          echo "Simulating build failure..."
-          exit 1
 
       - name: Checkout
         uses: actions/checkout@v4
