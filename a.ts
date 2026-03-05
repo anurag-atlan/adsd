@@ -15,3 +15,4 @@ export function h(a: number) {
   return a + 1;
 }
 export const a = 1000000;
+export const a = 11;
