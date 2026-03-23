@@ -1,4 +1,4 @@
-export let a = 2;
+export let a = 3;
 a = a + 1;
 a = a - 1;
 a += 1;
