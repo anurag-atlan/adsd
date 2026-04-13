@@ -1,0 +1,34 @@
+version: "0.0.1"
+
+replicaCount: 1
+containerPort: 8000
+
+env:
+  LOG_LEVEL: "info"
+  ATLAN_TENANT_ID: "default"
+
+dapr:
+  objectstore: true
+  secretstore: true
+  statestore: false
+  eventstore: false
+  subscription: false
+  configurationstore: false
+  lock: false
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 500Mi
+  limits:
+    cpu: 1
+    memory: 1000Mi
+
+affinity:
+  arch: "amd64"
+
+ingress:
+  enabled: true
+  path: "/api/test-connector/"
+  stripPath: true
+  plugins: ["keycloak-jwt"]
