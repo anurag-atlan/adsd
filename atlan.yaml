@@ -1,34 +1,29 @@
-version: "0.0.1"
+name: testing-something
+app_id: 019d70a1-dc49-72f0-8a5e-b4694a5d4570  # Global Marketplace UUID
+display_name: "Mongodb"
+type: connector
+execution_mode: argo
+icon_url: ""
+visibility: public
+argo_package_names:
+  - "@atlan/mongo"
 
-replicaCount: 1
-containerPort: 8000
+build_tag: v1
+# If set to true, images will be pushed to a shared repository where customers can also pull
+self_deployed_runtime: true
 
-env:
-  LOG_LEVEL: "info"
-  ATLAN_TENANT_ID: "default"
-
-dapr:
-  objectstore: true
-  secretstore: true
-  statestore: false
-  eventstore: false
-  subscription: false
-  configurationstore: false
-  lock: false
-
-resources:
-  requests:
-    cpu: 100m
-    memory: 500Mi
-  limits:
-    cpu: 1
-    memory: 1000Mi
-
-affinity:
-  arch: "amd64"
-
-ingress:
-  enabled: true
-  path: "/api/test-connector/"
-  stripPath: true
-  plugins: ["keycloak-jwt"]
+deploy:
+  replicaCount: 1
+  env:
+    ATLAN_HEARTBEAT_TIMEOUT_SECONDS: "1800"
+    ATLAN_START_TO_CLOSE_TIMEOUT_SECONDS: "7200"
+    ATLAN_TENANT_ID: "default"
+  containerPort: 8000
+  dapr:
+    objectstore: true
+    statestore: false
+    eventstore: false
+    subscription: false
+    secretstore: true
+    configurationstore: false
+    lock: false
