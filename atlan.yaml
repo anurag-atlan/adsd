@@ -1,5 +1,4 @@
 name: testing-something
-app_id: 019d70a1-dc49-72f0-8a5e-b4694a5d4570  # Global Marketplace UUID
 display_name: "Mongodb"
 type: connector
 execution_mode: argo
