@@ -1,15 +1,7 @@
-name: testing-something
-display_name: "Mongodb"
+name: adsd
+display_name: adsd
 type: connector
-execution_mode: argo
-icon_url: ""
-visibility: public
-argo_package_names:
-  - "@atlan/mongo"
-
-build_tag: v1
-# If set to true, images will be pushed to a shared repository where customers can also pull
-self_deployed_runtime: true
+visibility: private
 
 deploy:
   replicaCount: 1
@@ -26,3 +18,4 @@ deploy:
     secretstore: true
     configurationstore: false
     lock: false
+app_id: 019daaa7-880b-78e0-9951-c665ecde4b72
