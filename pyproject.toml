@@ -1,0 +1,8 @@
+[project]
+name = "adsd"
+version = "0.0.1"
+description = "E2E test app for Atlan Marketplace"
+requires-python = ">=3.11"
+dependencies = [
+    "atlan-application-sdk==2.2.0",
+]
